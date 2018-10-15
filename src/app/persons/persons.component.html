@@ -1,3 +1,27 @@
-<p>
-  persons works!
-</p>
+  <div *ngIf="selectedPerson">
+    <table style="margin: 0px auto;">
+      <tr>
+        <td>Naam: </td>
+        <td> <input [(ngModel)]="selectedPerson.name" placeholder="name"> </td>
+      </tr>
+      <tr>
+        <td>Leeftijd: </td>
+        <td> <input [(ngModel)]="selectedPerson.age" placeholder="age"> </td>
+      </tr>
+      <tr>
+        <td>Hobby: </td>
+        <td> <input [(ngModel)]="selectedPerson.hobby" placeholder="hobby"> </td>
+      </tr>
+    </table> 
+  </div>
+  
+
+<h2>Personen: </h2>
+<ul>
+  <li *ngFor="let person of persons" (click)="onSelect(person)">
+      <p>{{person.id}} {{person.name | uppercase}} </p>
+      <p>Leeftijd: {{person.age}}</p>
+      <p>Hobby: {{person.hobby}}</p>
+      <br>
+  </li>
+</ul>
