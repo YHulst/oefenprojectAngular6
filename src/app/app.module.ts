@@ -8,13 +8,17 @@ import { PersonsComponent } from './persons/persons.component';
 import { AnimalsComponent } from './animals/animals.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MessagesComponent } from './messages/messages.component';
+import { AnimalDetailComponent } from './animal-detail/animal-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonsComponent,
     AnimalsComponent,
-    DashboardComponent
+    DashboardComponent,
+    MessagesComponent,
+    AnimalDetailComponent
   ],
   imports: [
     BrowserModule,

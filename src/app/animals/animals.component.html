@@ -1,3 +1,13 @@
-<p>
-  animals works!
-</p>
+
+
+<h2>Dieren: </h2>
+<ul>
+<li *ngFor="let animal of animals">
+    <a routerLink="/animaldetail/{{animal.id}}">
+    <p>{{animal.id}} {{animal.name | uppercase}} </p>
+    <p>Leeftijd: {{animal.age}}</p>
+    <p>Diersoort: {{animal.species}}</p>
+    <br>
+  </a>
+</li>
+</ul>

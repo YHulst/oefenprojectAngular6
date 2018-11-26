@@ -2,7 +2,9 @@
     <table style="margin: 0px auto;">
       <tr>
         <td>Naam: </td>
-        <td> <input [(ngModel)]="selectedPerson.name" placeholder="name"> </td>
+        <td> <input [(ngModel)]="selectedPerson.name" placeholder="name"> </td> 
+        <button *ngIf="selectedPerson.name && (selectedPerson.age >= 0) && selectedPerson.hobby" (click)="addPerson(selectedPerson)" >Opslaan</button>
+        <button (click)="deletePerson(selectedPerson)">Persoon verwijderen</button>
       </tr>
       <tr>
         <td>Leeftijd: </td>

@@ -19,11 +19,29 @@ export class PersonsComponent implements OnInit {
 
   getPersons(): void {
     this.personService.getPersons()
-        .subscribe(heroes => this.persons = heroes);
+        .subscribe(persons => this.persons = persons);
   }
 
   onSelect(person: Person): void {
     this.selectedPerson = person;
   }
+
+  addPerson(person: Person): void {
+    console.log("de methode addPerson is aangeroepen");
+    this.personService.addPerson(person)
+      .subscribe(person => {
+        this.persons.push(person);
+      });
+  }
+
+  deletePerson(person: Person): void {
+    this.persons = this.persons.filter(p => p !== person);
+    this.personService.deletePerson(person).subscribe();
+  }
+
+  save(): void {
+    this.personService.updatePerson(this.selectedPerson)
+      .subscribe();
+  }  
 
 }
